@@ -9,8 +9,8 @@ function toggleCustomInput() {
     }
 }
 
-function calculeazaBacsis() {
-    const notaPlata = parseFloat(document.getElementById("notaPlata").value);
+function computeTip() {
+    const bill = parseFloat(document.getElementById("bill").value);
     const tipOption = document.getElementById("tipOption").value;
     let tipPercent;
 
@@ -20,31 +20,31 @@ function calculeazaBacsis() {
         tipPercent = parseFloat(tipOption);
     }
 
-    if (isNaN(notaPlata) || notaPlata <= 0) {
-        alert("Vă rugăm să introduceți o sumă validă pentru nota de plată.");
+    if (isNaN(bill) || bill <= 0) {
+        alert("Bill Amount is NOT VALID!");
         return;
     }
 
     if (isNaN(tipPercent) || tipPercent < 0) {
-        alert("Vă rugăm să introduceți un procent valid pentru bacșiș.");
+        alert("Tip Percentage is NOT VALID!");
         return;
     }
 
-    const valoareBacsis = (notaPlata * tipPercent) / 100;
-    const totalFinal = notaPlata + valoareBacsis;
+    const tipAmount = bill * (tipPercent / 100);
+    const total = bill + tipAmount;
 
-    document.getElementById("sumaInitiala").innerText = `Suma inițială: ${notaPlata.toFixed(2)} lei`;
-    document.getElementById("valoareBacsis").innerText = `Valoarea bacșișului: ${valoareBacsis.toFixed(2)} lei`;
-    document.getElementById("totalFinal").innerText = `Total: ${totalFinal.toFixed(2)} lei`;
-}
+    document.getElementById("initialAmount").innerText = `INITIAL AMOUNT: ${bill.toFixed(2)} lei`;
+    document.getElementById("tipAmount").innerText = `TIP AMOUNT: ${tipAmount.toFixed(2)} lei`;
+    document.getElementById("total").innerText = `TOTAL: ${total.toFixed(2)} lei`;
+}   
 
 function resetForm() {
-    document.getElementById("notaPlata").value = "";
+    document.getElementById("bill").value = "";
     document.getElementById("tipOption").value = "0";
     document.getElementById("customTip").style.display = "none";
     document.getElementById("customTip").value = "";
 
-    document.getElementById("sumaInitiala").innerText = "Suma inițială: -";
-    document.getElementById("valoareBacsis").innerText = "Valoarea bacșișului: -";
-    document.getElementById("totalFinal").innerText = "Total: -";
+    document.getElementById("initialAmount").innerText = "INITIAL AMOUNT: -";
+    document.getElementById("tipAmount").innerText = "TIP AMOUNT: -";
+    document.getElementById("total").innerText = "TOTAL: -";
 }

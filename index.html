@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator de bacșiș</title>
+    <title>TIP CALCULATOR</title>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
     <div class="container">
-        <h2>Calculator de bacșiș</h2>
+        <h2>TIP CALCULATOR</h2>
         
-        <input type="number" id="notaPlata" placeholder="Introduceți nota de plată" step="0.01">
+        <input type="number" id="bill" placeholder="INSERT BILL AMOUNT" step="0.01">
 
         <select id="tipOption" onchange="toggleCustomInput()">
-            <option value="0">Nu las bacșiș</option>
-            <option value="5">5%</option>
-            <option value="10">10%</option>
-            <option value="15">15%</option>
-            <option value="custom">Personalizat</option>
+            <option value="0">NO TIP</option>
+            <option value="5">5 %</option>
+            <option value="10">10 %</option>
+            <option value="15">15 %</option>
+            <option value="custom">CUSTOM TIP</option>
         </select>
 
-        <input type="number" id="customTip" placeholder="Introduceți procentul personalizat" style="display:none;" step="0.01">
+        <input type="number" id="customTip" placeholder="INSERT CUSTOM TIP PERCENTAGE" style="display:none;" step="0.01">
 
-        <button onclick="calculeazaBacsis()">Calculează</button>
+        <button onclick="computeTip()">COMPUTE</button>
         
-        <button onclick="resetForm()">Resetează</button>
+        <button onclick="resetForm()">RESET</button>
 
         <div class="results">
-            <p id="sumaInitiala">Suma inițială: -</p>
-            <p id="valoareBacsis">Valoarea bacșișului: -</p>
-            <p id="totalFinal">Total: -</p>
+            <p id="initialAmount">INITIAL AMOUNT: -</p>
+            <p id="tipAmount">TIP AMOUNT: -</p>
+            <p id="total">TOTAL: -</p>
         </div>
-    </div>
+
     </div>
 
     <script type="text/javascript" src="index.js"></script>
