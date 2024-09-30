@@ -33,7 +33,6 @@ function computeTip() {
     const tipAmount = bill * (tipPercent / 100);
     const total = bill + tipAmount;
 
-    document.getElementById("initialAmount").innerText = `INITIAL AMOUNT: ${bill.toFixed(2)} lei`;
     document.getElementById("tipAmount").innerText = `TIP AMOUNT: ${tipAmount.toFixed(2)} lei`;
     document.getElementById("total").innerText = `TOTAL: ${total.toFixed(2)} lei`;
 }   
@@ -44,7 +43,6 @@ function resetForm() {
     document.getElementById("customTip").style.display = "none";
     document.getElementById("customTip").value = "";
 
-    document.getElementById("initialAmount").innerText = "INITIAL AMOUNT: -";
-    document.getElementById("tipAmount").innerText = "TIP AMOUNT: -";
-    document.getElementById("total").innerText = "TOTAL: -";
+    document.getElementById("tipAmount").innerText = "TIP AMOUNT: 0.00";
+    document.getElementById("total").innerText = "TOTAL: 0.00";
 }
