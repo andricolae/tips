@@ -10,10 +10,13 @@
 
 <body>
     <div class="container">
+        
         <h2>TIPS</h2>
         
-        <input type="number" id="bill" placeholder="INSERT BILL" step="0.01">
+        <input type="number" id="bill" placeholder="INSERT BILL AMOUNT" step="0.5">
+        <p id="errorBill" style="color: red; display: none;">⚠ ONLY POSITIVE NUMBERS</p>
 
+        <h4>CHOOSE TIP PERCENTAGE, OR INSERT CUSTOM PERCENTAGE</h4>
         <select id="tipOption" onchange="toggleCustomInput()">
             <option value="0">NO TIP</option>
             <option value="5">5 %</option>
@@ -22,16 +25,24 @@
             <option value="custom">CUSTOM TIP</option>
         </select>
 
-        <input type="number" id="customTip" placeholder="INSERT CUSTOM TIP" style="display:none;" step="0.01">
+        <input type="number" id="customTip" placeholder="INSERT CUSTOM TIP PERCENTAGE" style="display:none;" step="0.01">
+        <p id="errorTip" style="color: red; display: none;">⚠ ONLY NUMBERS BETWEEN 0.1 AND 100 </p>
 
-        <button onclick="computeTip()">COMPUTE</button>
-        
+        <button id="compute" onclick="computeTip()">COMPUTE</button>
         <button onclick="resetForm()">RESET</button>
 
         <div class="results">
             <p id="tipAmount">TIP AMOUNT: 0.00</p>
             <p id="total">TOTAL: 0.00</p>
         </div>
+
+        <h4>INSERT NAMES, TO DECIDE WHO SHALL PAY THE BILL</h4>
+        <input type="text" id="payer" placeholder="INSERT NAMES, ENTER TO SAVE">
+        <p id="errorMessage" style="color: red; display: none;">⚠ ONLY LETTERS ALLOWED </p>
+
+        <button onclick="chooseLuckyPayer()">WHO SHALL PAY?</button>
+
+        <p id="selectedItem"></p>
 
     </div>
 
