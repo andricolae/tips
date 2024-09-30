@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TIP CALCULATOR</title>
+    <title>TIPS CALCULATOR</title>
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
     <div class="container">
-        <h2>TIP CALCULATOR</h2>
+        <h2>TIPS</h2>
         
-        <input type="number" id="bill" placeholder="INSERT BILL AMOUNT" step="0.01">
+        <input type="number" id="bill" placeholder="INSERT BILL" step="0.01">
 
         <select id="tipOption" onchange="toggleCustomInput()">
             <option value="0">NO TIP</option>
@@ -22,7 +22,7 @@
             <option value="custom">CUSTOM TIP</option>
         </select>
 
-        <input type="number" id="customTip" placeholder="INSERT CUSTOM TIP PERCENTAGE" style="display:none;" step="0.01">
+        <input type="number" id="customTip" placeholder="INSERT CUSTOM TIP" style="display:none;" step="0.01">
 
         <button onclick="computeTip()">COMPUTE</button>
         
