@@ -78,6 +78,18 @@ button:hover:disabled {
     color: #751603;
 }
 
+#selectedItem {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: none;
+    color: #e55335;
+    font-size: 1.5rem;
+}
+
+.fadeIn {
+    animation: fadeInZoom 1.25s infinite;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 20px;
@@ -110,16 +122,4 @@ button:hover:disabled {
         opacity: 0.15;
         transform: scale(0.8);
     }
-}
-
-#selectedItem {
-    opacity: 0;
-    transform: scale(0.8);
-    transition: none;
-    color: #e55335;
-    font-size: 1.5rem;
-}
-
-.fadeIn {
-    animation: fadeInZoom 1.25s infinite;
 }
