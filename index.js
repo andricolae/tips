@@ -19,7 +19,6 @@ function toggleCustomInput() {
 /*
  * VALIDATE THE CUSTOM TIP PERCENTAGE
  */
-
 document.getElementById('customTip').addEventListener('keypress', function(event) {
     const charCode = event.key.charCodeAt(0);
 
@@ -197,9 +196,9 @@ function resetForm() {
     hideTipErrorMessage();
 }
 
-/*
+/******************************************
  * FUNCTIONS FOR THE RANDOM PAYER GENERATOR 
- */
+ ******************************************/
 
 let myArray = [];
 const input = document.getElementById('payer');
