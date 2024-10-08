@@ -1,5 +1,5 @@
 /***********************************
- * FUNCTIONS FOR THE TIP CALCULATOR 
+ * FUNCTIONS FOR THE TIP CALCULATOR
  ***********************************/
 
 /*
@@ -22,9 +22,9 @@ function toggleCustomInput() {
 document.getElementById('customTip').addEventListener('keypress', function(event) {
     const charCode = event.key.charCodeAt(0);
 
-    if (!((charCode >= 48 && charCode <= 57) ||  
-        charCode === 46 ||                     
-        charCode === 44                        
+    if (!((charCode >= 48 && charCode <= 57) ||
+        charCode === 46 ||
+        charCode === 44
     )) {
         event.preventDefault();
         showTipErrorMessage();
@@ -167,6 +167,13 @@ function computeTip() {
 
     if (tipOption === "custom") {
         tipPercent = parseFloat(document.getElementById("customTip").value);
+        let x = document.getElementById("custonTip");
+
+        if (x = "") {
+            showTipErrorMessage();
+            disableButton(true);
+        }
+        return;
     } else {
         tipPercent = parseFloat(tipOption);
     }
@@ -181,7 +188,7 @@ function computeTip() {
     document.getElementById("tipOption").value = "0";
     document.getElementById("customTip").style.display = "none";
     document.getElementById("customTip").value = "";
-}   
+}
 
 function resetForm() {
     document.getElementById("bill").value = "";
@@ -197,7 +204,7 @@ function resetForm() {
 }
 
 /******************************************
- * FUNCTIONS FOR THE RANDOM PAYER GENERATOR 
+ * FUNCTIONS FOR THE RANDOM PAYER GENERATOR
  ******************************************/
 
 let myArray = [];
@@ -240,6 +247,7 @@ function addToArray() {
         input.value = '';
         /*console.log('Array-ul curent: ' + JSON.stringify(myArray));*/
     }
+    document.getElementById('insertedItems').innerHTML = myArray;
 }
 
 function chooseLuckyPayer() {
