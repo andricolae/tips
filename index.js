@@ -219,6 +219,13 @@ input.addEventListener('keypress', function (event) {
     }
 });
 
+input.addEventListener('keydown', function (event) {
+    if (event.key === 'Delete') {
+        event.preventDefault();
+        removeFromArray();
+    }
+});
+
 input.addEventListener('keypress', function(event) {
     const charCode = event.key.charCodeAt(0);
 
@@ -248,6 +255,25 @@ function addToArray() {
         /*console.log('Array-ul curent: ' + JSON.stringify(myArray));*/
     }
     document.getElementById('insertedItems').innerHTML = myArray;
+}
+
+function removeFromArray() {
+    const inputValue = input.value.trim();
+    const index = myArray.indexOf(inputValue);
+
+    if (index !== -1) {
+        myArray.splice(index, 1);
+        input.value = '';
+        updateInsertedItems();
+        input.placeholder = '❌ DELETED! INSERT NEXT';
+    } else {
+        input.value = '';
+        input.placeholder = '❌ NO ONE WITH THAT NAME';
+    }
+}
+
+function updateInsertedItems() {
+    document.getElementById('insertedItems').innerHTML = myArray.join(', ');
 }
 
 function chooseLuckyPayer() {
